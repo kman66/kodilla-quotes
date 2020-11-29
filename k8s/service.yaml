@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: quotesapp-k8s
+  name: quotesapp-k8s
+spec:
+  type: NodePort
+  ports:
+    - port: 8081
+      protocol: TCP
+      targetPort: 8081
+      nodePort: 32223
+  selector:
+    app: quotesapp-k8s
